@@ -2594,7 +2594,7 @@
     beepInterval: 1
   - type: Explosive
     explosionType: Default
-    maxIntensity: 20
+    maxIntensity: 3
     intensitySlope: 20
     totalIntensity: 225
   - type: ExplodeOnTrigger
@@ -3464,17 +3464,11 @@
         Base: syndicat_dead
       Dead:
         Base: syndicat_dead
-  - type: GhostRole
-    prob: 1
-    name: ghost-role-information-SyndiCat-name
-    allowMovement: true
-    description: ghost-role-information-SyndiCat-description
-    rules: ghost-role-information-SyndiCat-rules
-    mindRoles:
-    - MindRoleGhostRoleTeamAntagonist
-    raffle:
-      settings: default
-  - type: GhostTakeoverAvailable
+  - type: InputMover
+  - type: MobMover
+  - type: HTN
+    rootTask:
+      task: SimpleHostileCompound
   - type: AutoImplant
     implants:
     - MicroBombImplant
@@ -3926,6 +3920,7 @@
   id: MobDionaNymph
   description: It's like a cat, only.... branch-ier.
   components:
+  - type: ZombieTumorImmune
   - type: Sprite
     drawdepth: Mobs
     layers:
